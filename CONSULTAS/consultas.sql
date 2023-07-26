@@ -1,0 +1,15 @@
+SELECT * FROM actor WHERE first_name='Julia';
+SELECT * FROM actor WHERE first_name='Chris' OR first_name='Cameron' OR first_name='Cuba';
+SELECT * FROM customer WHERE first_name='Jamie' AND last_name='Rice';
+SELECT amount, payment_date FROM payment WHERE amount<1;
+SELECT * FROM rental ORDER BY return_date LIMIT 3;
+SELECT rating, COUNT (rating) FROM film WHERE rating='NC-17' OR rating='PG' OR rating='PG-13' GROUP BY rating;
+SELECT  film_id, title FROM film;
+SELECT * FROM film WHERE film_id<4;
+SELECT * FROM film WHERE rating='PG' OR rating='G';
+SELECT * FROM actor WHERE first_name IN ('Angela','Angelina','Audrey');
+SELECT return_date - rental_date AS duracion FROM rental GROUP BY duracion;
+SELECT country_id, city FROM city ORDER BY country_id, city;
+SELECT customer_id FROM rental WHERE return_date IS NOT NULL ORDER BY return_date DESC LIMIT 3;
+SELECT COUNT (DISTINCT customer_id) AS cantidad_clientes FROM rental;
+SELECT last_name, COUNT (*) AS cantidad_registros FROM customer GROUP BY last_name;
